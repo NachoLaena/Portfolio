@@ -30,7 +30,7 @@ export default function Hero() {
   ];
   
   return (
-    <div className="flex flex-col h-dvh p-4 items-center justify-center sm:flex-row gap-2">
+    <div className="flex flex-col h-dvh items-center justify-center sm:flex-row gap-2">
       <img src="/avatar.png" alt="programmer avatar" className="rounded-3xl dark:bg-opacity-30 w-64 md:w-80" />
       <Card>
         <CardHeader>
