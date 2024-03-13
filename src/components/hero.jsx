@@ -7,27 +7,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { IoMail } from "react-icons/io5";
+import { SOCIALS } from "../constants/socials";
 
 export default function Hero() {
-  const socials = [
-    {
-      name: "GitHub",
-      link: "https://github.com/NachoLaena",
-      icon: <FaGithub />,
-    },
-    {
-      name: "LinkedIn",
-      link: "https://www.linkedin.com/in/ignacio-laena-2577ba244/",
-      icon: <FaLinkedin />,
-    },
-    {
-      name: "ignaciolaena@gmail.com",
-      link: "mailto:ignaciolaena@gmail.com",
-      icon: <IoMail />,
-    },
-  ];
   
   return (
     <div className="flex flex-col h-dvh items-center justify-center sm:flex-row gap-2">
@@ -46,7 +28,7 @@ export default function Hero() {
           </p>
         </CardContent>
         <CardFooter className="gap-4 flex-wrap">
-          {socials.map((social, index) => (
+          {SOCIALS.map((social, index) => (
             <a
               key={index}
               href={social.link}

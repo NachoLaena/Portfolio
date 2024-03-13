@@ -7,42 +7,15 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
+import { PROJECTS } from "@/constants/projects";
+
 export default function Projects() {
-  const projects = [
-    {
-      title: "Chess-timer",
-      img: "/chess-timer.png",
-      description:
-        "Chess timer app to play chess with friends. It has settings were you can change the time of the game and the increment.",
-      link: "https://chess-timer-laena.netlify.app",
-      github: "https://github.com/NachoLaena/chess-timer",
-      tech: ["React", "JavaScript"],
-    },
-    {
-      title: "Project 2",
-      img: "/project2.png",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet justo nec libero luctus ultricies.",
-      link: "",
-      github: "",
-      tech: ["Next.js", "Tailwind CSS"],
-    },
-    {
-      title: "Project 3",
-      img: "/project3.png",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet justo nec libero luctus ultricies.",
-      link: "",
-      github: "",
-      tech: ["Gatsby", "Tailwind CSS"],
-    },
-  ];
 
   return (
     <div className="dark">
       <h2 className="text-white text-4xl font-semibold font-mono">Projects</h2>
       <div className="flex gap-4 flex-wrap justify-center">
-        {projects.map((project, index) => (
+        {PROJECTS.map((project, index) => (
           <Card key={index} className="mt-4 max-w-80">
             <CardHeader>
               <CardTitle>{project.title}</CardTitle>
