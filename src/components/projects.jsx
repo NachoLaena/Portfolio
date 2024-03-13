@@ -9,6 +9,12 @@ import {
 import { Button } from "@/components/ui/button";
 import { PROJECTS } from "@/constants/projects";
 import { FaCode, FaExternalLinkAlt } from "react-icons/fa";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 export default function Projects() {
   return (
@@ -40,26 +46,38 @@ export default function Projects() {
             </CardContent>
             <CardFooter className="flex flex-col gap-4">
               <div className="flex w-full justify-end gap-4">
-                <Button size="icon" asChild>
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener"
-                    title="Ir a la pagina"
-                  >
-                    <FaExternalLinkAlt />
-                  </a>
-                </Button>
-                <Button variant="outline" size="icon" asChild>
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener"
-                    title="Ir al repositorio"
-                  >
-                    <FaCode />
-                  </a>
-                </Button>
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button size="icon" asChild>
+                        <a href={project.link} target="_blank" rel="noopener">
+                          <FaExternalLinkAlt />
+                        </a>
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Ir a la pagina</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button variant="outline" size="icon" asChild>
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener"
+                        >
+                          <FaCode />
+                        </a>
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Ir al repositorio</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
               </div>
             </CardFooter>
           </Card>
