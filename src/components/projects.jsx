@@ -15,8 +15,8 @@ export default function Projects() {
       description:
         "Chess timer app to play chess with friends. It has settings were you can change the time of the game and the increment.",
       link: "https://chess-timer-laena.netlify.app",
-      github: "",
-      tech: ["React", "Tailwind CSS"],
+      github: "https://github.com/NachoLaena/chess-timer",
+      tech: ["React", "JavaScript"],
     },
     {
       title: "Project 2",
@@ -35,7 +35,7 @@ export default function Projects() {
       link: "",
       github: "",
       tech: ["Gatsby", "Tailwind CSS"],
-    }
+    },
   ];
 
   return (
@@ -44,41 +44,48 @@ export default function Projects() {
       <div className="flex gap-4 flex-wrap justify-center">
         {projects.map((project, index) => (
           <Card key={index} className="mt-4 max-w-80">
-            <div>
-
-            </div>
             <CardHeader>
               <CardTitle>{project.title}</CardTitle>
               <CardDescription>{project.description}</CardDescription>
             </CardHeader>
             <CardContent>
-              <img src={project.img} alt={project.title} className="rounded-lg aspect-[4/3]" />
+              <img
+                src={project.img}
+                alt={project.title}
+                className="rounded-lg aspect-[4/3]"
+              />
+              <div className="flex gap-2 mt-1">
+                {project.tech.map((tech, index) => (
+                  <span
+                    key={index}
+                    className="bg-primary-foreground text-primary py-1 px-2 rounded-full "
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </CardContent>
-            <CardFooter className="flex-wrap gap-4">
-              {project.tech.map((tech, index) => (
-                <span key={index} className="bg-slate-200 dark:bg-primary-foreground text-primary p-2 rounded-md">
-                  {tech}
-                </span>
-              ))}
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noreferrer"
-                className="bg-primary dark:bg-primary-foreground text-slate-200 p-2 rounded-md"
-              >
-                View Project
-              </a>
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noreferrer"
-                className="bg-primary dark:bg-primary-foreground text-slate-200 p-2 rounded-md"
-              >
-                View Code
-              </a>
+            <CardFooter className="flex flex-col gap-4">
+              <div className="flex w-full justify-around">
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="bg-primary text-primary-foreground p-2 rounded-lg transition-colors duration-300 ease-in-out border-2 border-transparent lg:hover:border-card"
+                >
+                  View Project
+                </a>
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="bg-slate-800 text-slate-200 p-2 rounded-lg transition-colors duration-300 ease-in-out border-2 border-transparent lg:hover:border-card"
+                >
+                  View Code
+                </a>
+              </div>
             </CardFooter>
           </Card>
-        
         ))}
       </div>
     </div>
