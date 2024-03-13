@@ -6,11 +6,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-
+import { Button } from "@/components/ui/button";
 import { PROJECTS } from "@/constants/projects";
+import { FaCode, FaExternalLinkAlt } from "react-icons/fa";
 
 export default function Projects() {
-
   return (
     <div className="dark">
       <h2 className="text-white text-4xl font-semibold font-mono">Projects</h2>
@@ -39,23 +39,27 @@ export default function Projects() {
               </div>
             </CardContent>
             <CardFooter className="flex flex-col gap-4">
-              <div className="flex w-full justify-around">
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="bg-primary text-primary-foreground p-2 rounded-lg transition-colors duration-300 ease-in-out border-2 border-transparent lg:hover:border-card"
-                >
-                  View Project
-                </a>
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="bg-slate-800 text-slate-200 p-2 rounded-lg transition-colors duration-300 ease-in-out border-2 border-transparent lg:hover:border-card"
-                >
-                  View Code
-                </a>
+              <div className="flex w-full justify-end gap-4">
+                <Button size="icon" asChild>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener"
+                    title="Ir a la pagina"
+                  >
+                    <FaExternalLinkAlt />
+                  </a>
+                </Button>
+                <Button variant="outline" size="icon" asChild>
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener"
+                    title="Ir al repositorio"
+                  >
+                    <FaCode />
+                  </a>
+                </Button>
               </div>
             </CardFooter>
           </Card>
