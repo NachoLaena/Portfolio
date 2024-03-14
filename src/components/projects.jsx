@@ -22,7 +22,7 @@ export default function Projects() {
       <h2 className="text-white text-4xl font-semibold font-mono">Projects</h2>
       <div className="flex gap-4 flex-wrap justify-center">
         {PROJECTS.map((project, index) => (
-          <Card key={index} className="mt-4 max-w-80">
+          <Card key={index} className="mt-4 max-w-96 lg:w-80">
             <CardHeader>
               <CardTitle>{project.title}</CardTitle>
               <CardDescription>{project.description}</CardDescription>
