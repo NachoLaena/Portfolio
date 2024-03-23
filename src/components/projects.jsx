@@ -18,11 +18,16 @@ import {
 
 export default function Projects() {
   return (
-    <div className="dark">
-      <h2 className="text-white text-4xl font-semibold font-mono">Projects</h2>
-      <div className="flex gap-4 flex-wrap justify-center">
+    <div className="dark w-full">
+      <h2 className="text-white text-4xl font-bold mb-4">Projects</h2>
+      <div
+        className="flex gap-4 flex-wrap justify-center sm:justify-around"
+      >
         {PROJECTS.map((project, index) => (
-          <Card key={index} className="mt-4 max-w-96 lg:w-80">
+          <Card
+            key={index}
+            className="max-w-96 lg:max-w-80"
+          >
             <CardHeader>
               <CardTitle>{project.title}</CardTitle>
               <CardDescription>{project.description}</CardDescription>
@@ -64,11 +69,7 @@ export default function Projects() {
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <Button variant="outline" size="icon" asChild>
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener"
-                        >
+                        <a href={project.github} target="_blank" rel="noopener">
                           <FaCode />
                         </a>
                       </Button>
