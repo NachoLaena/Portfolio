@@ -18,10 +18,10 @@ import {
 
 export default function Projects() {
   return (
-    <div className="dark w-full">
+    <div id="projects" className="dark w-full">
       <h2 className="text-white text-4xl font-bold mb-4">Projects</h2>
       <div
-        className="flex gap-4 flex-wrap justify-center sm:justify-around"
+        className="flex gap-4 flex-wrap justify-center sm:justify-around lg:justify-between"
       >
         {PROJECTS.map((project, index) => (
           <Card
