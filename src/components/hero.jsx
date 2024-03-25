@@ -10,7 +10,7 @@ import { SOCIALS } from "../constants/socials";
 
 export default function Hero() {
   return (
-    <div className="flex flex-col items-center justify-center gap-10 pt-10 lg:flex-row lg:gap-20 sm:bg-slate-950 sm:border sm:border-slate-800 sm:rounded-md sm:p-10">
+    <div className="flex flex-col items-center justify-center gap-10 mt-10 lg:mt-20 sm:bg-slate-950 sm:border sm:border-slate-800 sm:rounded-md sm:p-10 lg:flex-row lg:gap-20">
       <div className="w-full flex flex-col items-center justify-center gap-2 sm:flex-row sm:justify-evenly lg:flex-col">
         <img
           src="/avatar.png"
